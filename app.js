@@ -6,10 +6,6 @@ const bodyParser = require('body-parser');
 const exhbs = require('express-handlebars');
 
 const app = express();
-console.log(keys);
-console.log(keys.user);
-console.log(keys.pass);
-console.log(keys.to);
 
 //port setup
 const port = process.env.PORT || 5000;
@@ -50,10 +46,6 @@ app.post('/sendmail', (req, res) => {
   <p>Yours sincerely,</p>
   <p>${req.body.name}</p>
   `;
-
-  console.log(keys.user);
-  console.log(keys.pass);
-  console.log(keys.to);
 
   // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
