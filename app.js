@@ -1,5 +1,5 @@
 const express = require('express');
-const keys = require('./config/keys');
+const keys = require('./config/keys_prod');
 const nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 const bodyParser = require('body-parser');
