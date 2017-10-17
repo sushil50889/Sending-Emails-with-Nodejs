@@ -57,14 +57,13 @@ app.post('/sendmail', (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: 'smtp.ethereal.email',
         port: 587,
-        secure: false,
-        service: 'Gmail', // true for 465, false for other ports
+        secure: false, // true for 465, false for other ports
         auth: {
             user: keys.user, // generated ethereal user
             pass: keys.pass  // generated ethereal password
-              }        
+              }
     });
 
     // setup email data with unicode symbols
