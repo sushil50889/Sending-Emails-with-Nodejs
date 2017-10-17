@@ -64,10 +64,7 @@ app.post('/sendmail', (req, res) => {
         auth: {
             user: keys.user, // generated ethereal user
             pass: keys.pass  // generated ethereal password
-              },
-        tls: {
-          rejectUnauthorized: false
-        }
+              }        
     });
 
     // setup email data with unicode symbols
