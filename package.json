@@ -1,0 +1,24 @@
+{
+  "name": "sending-emails-with-nodejs",
+  "version": "1.0.0",
+  "description": "sending emails with nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sending",
+    "emails",
+    "with",
+    "nodejs"
+  ],
+  "author": "sushil",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "nodemailer": "^4.2.0",
+    "nodemailer-smtp-transport": "^2.7.4"
+  }
+}
