@@ -56,16 +56,16 @@ app.post('/sendmail', (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: 'smtp-mail.outlook.com',
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
             user: keys.user, 
             pass: keys.pass
               },
-        tls: {
-          rejectUnauthorized: false
-        }      
+        // tls: {
+        //   rejectUnauthorized: false
+        // }      
     });
 
     // setup email data with unicode symbols
