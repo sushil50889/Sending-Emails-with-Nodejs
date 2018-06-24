@@ -22,10 +22,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(`${__dirname}/public`));
 
 
+
+
 //index route
 app.get('/', (req, res) => {
   res.render('contact');
 });
+
+
+
 
 app.post('/sendmail', (req, res) => {
   const sentEmailTo = req.body.email;
