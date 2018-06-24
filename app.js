@@ -28,9 +28,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/sendmail', (req, res) => {
+  const sentEmailTo = req.body.email;
+  // console.log(sentEmailTo);
   const output = `
-  <p>You have receive a new contact request</p>
-  <h3>Contact Details</h3>
+  <p>Thanks For Subscription Request</p>
+  <h3>Contact</h3>
   <ul>
     <li>name : ${req.body.name}</li>
     <li>name : ${req.body.company}</li>
@@ -44,24 +46,24 @@ app.post('/sendmail', (req, res) => {
   <br>
   <br>
   <p>Yours sincerely,</p>
-  <p>${req.body.name}</p>
+  <p>Rocket Web Design</p>
   `;
 
   // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'smtp.zoho.com',
-        port: 465,
+        host: 'smtp.gmail.com',
+        port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: keys.user, // generated ethereal user
-            pass: keys.pass  // generated ethereal password
+            user: keys.user, 
+            pass: keys.pass 
               }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: `"Sushil Chandra Mandi" <${keys.user}>`, // sender address
-        to: keys.to, // list of receivers
+        from: `"Rocket Web Design" <mandi.sushil1990@gmail.com>`, // sender address
+        to: sentEmailTo, // list of receivers
         subject: 'Hello, This Is a Test Mail', // Subject line
         text: 'Test Mail', // plain text body
         html: output // html body
@@ -72,12 +74,15 @@ app.post('/sendmail', (req, res) => {
         if (error) {
             return console.log(error);
         }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        var msg = `Well done! ${req.body.name}, You successfully send the mail.`;
+        // console.log('Message sent: %s', info.messageId);
+        // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        var msg = `Well done! ${req.body.name}, Please Check Your Mail.`;
         res.render('contact', {msg: msg});
     });
 });
+
+
+
 
 
 app.listen(port, () => {
