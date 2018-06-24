@@ -63,14 +63,14 @@ app.post('/sendmail', (req, res) => {
             user: keys.user, 
             pass: keys.pass
               },
-        // tls: {
-        //   rejectUnauthorized: false
-        // }      
+        tls: {
+          rejectUnauthorized: true
+        }      
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: `"Rocket Web Design" <mandi.sushil1990@gmail.com>`, // sender address
+        from: `"Rocket Web Design" <mandimandi741@outlook.com>`, // sender address
         to: sentEmailTo, // list of receivers
         subject: 'Hello, This Is a Test Mail', // Subject line
         text: 'Test Mail', // plain text body
