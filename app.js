@@ -56,7 +56,7 @@ app.post('/sendmail', (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'smtp-mail.outlook.com',
+        host: 'smtp.mail.yahoo.com',
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
@@ -70,7 +70,7 @@ app.post('/sendmail', (req, res) => {
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: `"Rocket Web Design" <mandimandi741@outlook.com>`, // sender address
+        from: `"Rocket Web Design" <testpurpose28@yahoo.com>`, // sender address
         to: sentEmailTo, // list of receivers
         subject: 'Hello, This Is a Test Mail', // Subject line
         text: 'Test Mail', // plain text body
